@@ -99,3 +99,14 @@ button.btn-primary:hover {
     background-color: #e08e0b;
     border-color: #e08e0b;
 }
+
+.container {
+    max-width: 100px;
+    margin: 0 auto;
+    padding: 11px;
+    background-color: #333;
+    border: 1px solid #d0d3da;
+    border-radius: 5px;
+    text-align: center;
+
+}
