@@ -1,17 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        
-        if (name && email && message) {
-            alert('Merci pour votre message ! Nous vous répondrons bientôt.');
-            form.reset();
-        } else {
-            alert('Veuillez remplir tous les champs.');
-        }
-    });
-});
+const totalImages = 1;
+    const gallery = document.getElementById('gallery');
+    for (let i = 1; i <= totalImages; i++) {
+        const img = document.createElement('img');
+        img.className = 'img-fluid m-2 animate__animated animate__zoomIn';
+        img.src = `../../assets/img/festichill_2022/event${i}.jpg`;
+        img.alt = 'Le Festichill 2022 Cotonou';
+        gallery.appendChild(img);
+}
