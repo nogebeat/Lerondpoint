@@ -99,3 +99,27 @@ button.btn-primary:hover {
     background-color: #e08e0b;
     border-color: #e08e0b;
 }
+
+.logo {
+    height: 150px;
+    width: auto;
+}
+
+.img-button {
+    display: inline-block;
+    border: 2px solid #f8f8f8;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.img-button img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.img-button:hover img {
+    transform: scale(1.05);
+}
+
