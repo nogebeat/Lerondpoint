@@ -137,3 +137,39 @@ button.btn-primary:hover {
     height: 32px;
     margin-top: 10px;
 }
+
+.slider-container {
+    width: 300px; /* Adjust width as needed */
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-image {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider-image img {
+    width: 100%;
+    height: auto;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    outline: none;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
