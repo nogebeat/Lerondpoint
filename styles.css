@@ -123,3 +123,17 @@ button.btn-primary:hover {
     transform: scale(1.05);
 }
 
+.social_media_icons {
+    margin-top: 20px;
+    display: flex; 
+    justify-content: center;
+}
+.social_media_icons a {
+    display: inline-block;
+    margin: 0 10px;
+}
+.social_media_icon {
+    width: 32px;
+    height: 32px;
+    margin-top: 10px;
+}
