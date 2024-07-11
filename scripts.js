@@ -16,32 +16,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-let slideIndex = 0;
-    const slides = document.querySelector('.slider-image');
-    const totalSlides = slides.querySelectorAll('img').length;
+let i = 0;
+    const imgs = document.querySelector('.slider-image');
+    const tot = imgs.querySelectorAll('img').length;
 
-    function showSlide(index) {
-        if (index < 0) {
-            slideIndex = totalSlides - 1;
-        } else if (index >= totalSlides) {
-            slideIndex = 0;
-        } else {
-            slideIndex = index;
-        }
-
-        const slideWidth = slides.clientWidth;
-        slides.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+    function affimg(index) {
+        if (index < 0)
+            i = tot - 1;
+        else if (index >= tot)
+            i = 0;
+        else
+            i = index;
+        const slideWidth = imgs.clientWidth;
+        imgs.style.transform = `translateX(-${i * slideWidth}px)`;
     }
 
-    function nextSlide() {
-        showSlide(slideIndex + 1);
+    function next() {
+        affimg(i + 1);
     }
 
-    function prevSlide() {
-        showSlide(slideIndex - 1);
+    function prev() {
+        affimg(i - 1);
     }
 
-    // Automatic slide change (optional)
     setInterval(() => {
-        nextSlide();
-    }, 3000); // Change slide every 3 seconds
+        next();
+    }, 5000);

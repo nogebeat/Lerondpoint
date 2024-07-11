@@ -20,9 +20,11 @@
         
 </head>
 <body class="bg-dark text-light">
-    <header class="bg-dark text-center py-3">
+    <header class="bg-dark text-center py-3 position-relative">
         <div class="d-flex align-items-center justify-content-center">
-            <img src="./assets/logo/logo.png" alt="Le Rond Point Logo" class="logo">
+            <a class="animate__animated animate__fadeInDown ms-3">
+                <img src="./assets/logo/logo.png" alt="Le Rond Point Logo" class="logo">
+            </a>
             <h1 class="animate__animated animate__fadeInDown ms-3">Le Rond Point</h1>
         </div>
         <nav>
@@ -36,6 +38,7 @@
                 <li class="nav-item"><a class="nav-link text-light" href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <a href="./login/login.html" class="btn btn-primary position-absolute top-0 end-0 m-3" style="background-color: dimgray;">Connexion</a>
     </header>
 
     <section id="home" class="animate__animated animate__fadeInDown" style="text-align: center">
@@ -100,13 +103,13 @@
         <h2 class="animate__animated animate__fadeInLeft" >Partenaires</h2>
         <div class="slider-container">
             <div class="slider-image" style="text-align: center" >
-                <img src="https://awss3bucket-secure-eticket.s3.eu-central-1.amazonaws.com/1719150144-0b0bf428-802d-494c-9c8e-f9905d75a927.jpeg" alt="Image 1">
-                <img src="https://awss3bucket-secure-eticket.s3.eu-central-1.amazonaws.com/1719150144-c64b5839-f21e-4d13-952f-b85ab901abaa.jpeg" alt="Image 2">
-                <img src="https://awss3bucket-secure-eticket.s3.eu-central-1.amazonaws.com/1719150144-IMG_3586.png" alt="Image 3">
-                <img src="https://awss3bucket-secure-eticket.s3.eu-central-1.amazonaws.com/1719150144-IMG_3587.jpeg" alt="Image 4">
+                <img src="./assets/logo/groupe3h.jpeg" alt="Image 1">
+                <img src="./assets/logo/jojotv.jpeg" alt="Image 2">
+                <img src="./assets/logo/l'alchimiste.jpeg" alt="Image 3">
+                <img src="./assets/logo/lemaillot.png" alt="Image 4">
             </div>
-            <button class="slider-btn prev-btn" onclick="prevSlide()">&#10094;</button>
-            <button class="slider-btn next-btn" onclick="nextSlide()">&#10095;</button>
+            <button class="slider-btn prev-btn" onclick="prev()">&#10094;</button>
+            <button class="slider-btn next-btn" onclick="next()">&#10095;</button>
         </div>
     </section>
 
