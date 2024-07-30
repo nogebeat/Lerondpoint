@@ -4,6 +4,8 @@
     padding: 21px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background: url('./../assets/img/bg.jpg');
+
 }
 
 h1 {
