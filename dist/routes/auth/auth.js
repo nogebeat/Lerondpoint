@@ -17,9 +17,9 @@ const message = [
 
 router.post('/register', function (req, res){
         
-    const { firstname, name, email, password, confpass, adress, birthday, sex, rank} = req.body;
+    const { firstname, name, email, phone,password, confpass, adress, birthday, sex, rank} = req.body;
 
-    if (!firstname || !name || !email || !password || !confpass || !adress || !birthday || !sex || !rank) {
+    if (!firstname || !name || !email || !phone || !password || !confpass || !adress || !birthday || !sex || !rank) {
         return res.status(400).json({ "msg": message[1] });
     }
     if (password !== confpass){
@@ -37,8 +37,8 @@ router.post('/register', function (req, res){
             }
 
             const hashpass = await bcrypt.hash(password, 11);
-            const query = 'INSERT INTO user (firstname, name, email, password, confpass, adress, birthday, sex, rank) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
-            db.query(query, [firstname, name, email, hashpass, confpass, adress, birthday, sex, rank], (err, result) => {
+            const query = 'INSERT INTO user (firstname, name, email, phone ,password, confpass, adress, birthday, sex, rank) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+            db.query(query, [firstname, name, email, phone,hashpass, confpass, adress, birthday, sex, rank], (err, result) => {
                 res.status(201).json({"token": message[4]});
             });
         });

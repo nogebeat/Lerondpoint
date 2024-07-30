@@ -8,6 +8,7 @@ CREATE TABLE if not exists user (
     firstname VARCHAR(255) NOT NULL,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
+    phone 
     password VARCHAR(255) NOT NULL,
     confpass VARCHAR(255) NOT NULL,
     adress VARCHAR(255) NOT NULL,

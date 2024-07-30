@@ -33,10 +33,23 @@
             <h1 class="animate__animated animate__fadeInLeft" >Registration Form</h1>
             <form id="register-form">
                 <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="text" name="firstname" placeholder="First Name" required>
-                <button type="submit">Register</button>
+                <input type="password" name="password" placeholder="Mot de passe" required>
+                <input type="password" name="confpass" placeholder="Confirmer le mot de passe" required>
+                <input type="text" name="name" placeholder="Nom" required>
+                <input type="text" name="firstname" placeholder="Prénom" required>
+                <input type="text" name="phone" placeholder="Numéro de téléphone" required>
+                <input type="text" name="adress" placeholder="Adresse" required>
+                <input type="date" name="birthday" placeholder="Date de naissance" required>
+                <select name="sex" required>
+                    <option value="" disabled selected>Sexe</option>
+                    <option value="masculin">Masculin</option>
+                    <option value="feminin">Féminin</option>
+                    <option value="transgenre">Transgenre</option>
+                    <option value="non déterminé">Non déterminé</option>
+                    <option value="autre">Autre</option>
+                </select>
+                <input type="number" name="rank" placeholder="Rang" required>
+                <button type="submit">S'inscrire</button>
             </form>
             <div id="message"></div>
         </div>

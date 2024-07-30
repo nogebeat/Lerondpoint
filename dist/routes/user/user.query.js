@@ -77,7 +77,7 @@ router.put('/users/:id', veritoken, function (req, res) {
             }
 
 
-            const queryUpdate = 'UPDATE user SET firstname = ?, name = ?, email = ?,password = ?, confpass = ?, adress = ?, birthday = ?, sex = ?, rank = ? WHERE id = ?';
+            const queryUpdate = 'UPDATE user SET firstname = ?, name = ?, email = ?, phone = ?, password = ?, confpass = ?, adress = ?, birthday = ?, sex = ?, rank = ? WHERE id = ?';
             db.query(queryUpdate, [firstname, name, email, hashpass, confpass, adress, birthday, sex, rank], (err, updateResult) => {
                 if (err) {
                     return res.status(404).json({"msg": message[1] });
