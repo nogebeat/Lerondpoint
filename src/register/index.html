@@ -37,6 +37,7 @@
                 <input type="password" name="confpass" placeholder="Confirmer le mot de passe" required>
                 <input type="text" name="name" placeholder="Nom" required>
                 <input type="text" name="firstname" placeholder="Prénom" required>
+                <input type="text" name="username" placeholder="Nom d'utilisateur" required>
                 <input type="text" name="phone" placeholder="Numéro de téléphone" required>
                 <input type="text" name="adress" placeholder="Adresse" required>
                 <input type="date" name="birthday" placeholder="Date de naissance" required>
@@ -48,13 +49,14 @@
                     <option value="non déterminé">Non déterminé</option>
                     <option value="autre">Autre</option>
                 </select>
-                <input type="number" name="rank" placeholder="Rang" required>
+                <input value="2" type="number" placeholder="Rang" required readonly>
                 <button type="submit">S'inscrire</button>
             </form>
-            <div id="message"></div>
         </div>
     </header>
-
+    
+    <div id="message"></div>
+    
     <div class="button-container">
         <button class="btn btn-primary my-3" onclick="window.location.href='./../index.html'"><-- Home</button>
     </div>
