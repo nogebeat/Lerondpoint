@@ -36,18 +36,18 @@ router.post('/todos', veritoken,function (req, res) {
         return res.status(400).json({ "msg": message[1]  });
     }
 
-        const checkQuery = 'SELECT COUNT(*) as count FROM todo WHERE title = ?';
-        db.query(checkQuery, [title], async (checkErr, checkResult) => {
-            if (checkErr) {
-                console.error('Error checking title:', checkErr);
-                return res.status(500).json({ "msg": message[0]  });
-            }
-            
-            if (checkResult[0].count > 0) {
-                return res.status(409).json({ "msg": message[3]  });
-            }
-            const query = 'SELECT COUNT(*) as count FROM user WHERE id = ?';
-            db.query(query, [user_id], (err, results) => {
+    const checkQuery = 'SELECT COUNT(*) as count FROM todo WHERE title = ?';
+    db.query(checkQuery, [title], async (checkErr, checkResult) => {
+        if (checkErr) {
+            console.error('Error checking title:', checkErr);
+            return res.status(500).json({ "msg": message[0]  });
+        }
+        
+        if (checkResult[0].count > 0) {
+            return res.status(409).json({ "msg": message[3]  });
+        }
+        const query = 'SELECT COUNT(*) as count FROM user WHERE id = ?';
+        db.query(query, [user_id], (err, results) => {
             if (err) {
                 return res.status(500).json({ "msg": message[0]  });
             }
@@ -63,7 +63,7 @@ router.post('/todos', veritoken,function (req, res) {
                 res.status(201).json({"token": message[4]});
             });
         });
-        });
+    });
 });
 
 module.exports = router;

@@ -1,3 +1,30 @@
+document.getElementById('login').addEventListener('click', () => {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        window.location.href = '/login';
+    } else {
+        fetch('/validate-token', {
+            method: 'GET',
+            headers: {
+                'Authorization': token
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.valid) {
+                window.location.href = '/dashboard';
+            } else {
+                window.location.href = '/login';
+            }
+        })
+        .catch(error => {
+            console.error('Error validating token:', error);
+            window.location.href = '/login.html';
+        });
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     form.addEventListener('submit', (e) => {

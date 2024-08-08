@@ -13,9 +13,17 @@ document.getElementById('register-form').addEventListener('submit', async functi
             body: JSON.stringify(registerData)
         });
 
+        
         if (response.ok) {
             const responseData = await response.json();
             document.getElementById('message').innerText = responseData.token;
+            if (response.status === 202) {
+                localStorage.setItem('token', responseData.token);
+                window.location.href = '/dashboard';
+            } else {
+                alert(responseData.msg);
+            }
+
         } else {
             const responseData = await response.json();
             document.getElementById('message').innerText = responseData.msg;
@@ -26,3 +34,25 @@ document.getElementById('register-form').addEventListener('submit', async functi
     }
 });
 
+if (window.location.pathname === '/dashboard') {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        window.location.href = '/login';
+    } else {
+        fetch('/dashboard', {
+            method: 'GET',
+            headers: {
+                'Authorization': token
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.msg === "Token invalide") {
+                window.location.href = '/login';
+            } else {
+                document.getElementById('userId').innerText = data.userId;
+            }
+        });
+    }
+}

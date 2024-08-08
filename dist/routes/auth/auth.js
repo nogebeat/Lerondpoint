@@ -139,6 +139,36 @@ router.post('/login', function (req, res) {
     });
 });
 
+router.get('/dashboard', (req, res) => {
+    const token = req.headers['authorization'];
 
+    if (!token) {
+        return res.status(403).json({ "msg": "Token requis" });
+    }
+
+    jwt.verify(token, process.env.SECRET, (err, decoded) => {
+        if (err) {
+            return res.status(401).json({ "msg": "Token invalide" });
+        }
+
+        res.status(200).json({ "msg": "Accès autorisé au tableau de bord", "userId": decoded.userId });
+    });
+});
+
+router.get('/validate-token', (req, res) => {
+    const token = req.headers['authorization'];
+
+    if (!token) {
+        return res.status(400).json({ valid: false, msg: "Token requis" });
+    }
+
+    jwt.verify(token, process.env.SECRET, (err, decoded) => {
+        if (err) {
+            return res.status(401).json({ valid: false, msg: "Token invalide" });
+        }
+
+        res.status(200).json({ valid: true, userId: decoded.userId });
+    });
+});
 
 module.exports = router;
