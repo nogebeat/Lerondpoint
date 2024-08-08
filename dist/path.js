@@ -4,10 +4,10 @@ const app = express();
 const path = require('path');
 
 
+app.use('/assets', express.static(path.join(__dirname, '../src/assets/')));
 
 app.use('/', express.static(path.join(__dirname, '../src/home/')));
 app.use('/login', express.static(path.join(__dirname, '../src/login/')));
-app.use('/assets', express.static(path.join(__dirname, '../src/assets/')));
 app.use('/register', express.static(path.join(__dirname, '../src/register/')));
 app.use('/dashboard', express.static(path.join(__dirname, '../src/dashboard/home')));
 app.use('/dashboard/profil', express.static(path.join(__dirname, '../src/dashboard/profil')));
