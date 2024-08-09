@@ -229,3 +229,15 @@ button.btn-primary:hover {
     padding-right: 40px;
     padding-top: 48px;
 }
+
+
+@media (max-width: 768px) {
+
+    .myfooter {
+        display: flex;
+        /* grid-template-columns: repeat(3, 1fr); */
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
