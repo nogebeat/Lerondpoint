@@ -125,7 +125,7 @@ router.post('/login', function (req, res) {
         }
 
         const token = jwt.sign({ userId: user.id }, process.env.SECRET, { expiresIn: '3h' });
-        res.status(202).json({ token });
+        res.status(202);
 
         const userId = user.id;
         const inserttoken = 'UPDATE token_verified SET user_token = ? WHERE id = ?';
